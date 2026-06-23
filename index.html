@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>결과 갤러리 — Gen-AI 건물 텍스처링</title>
+<style>
+  :root{--bg:#f4f6f9;--card:#fff;--line:#e3e7ee;--fg:#1b2230;--mut:#6b7686;--acc:#c0392b;--ok:#2e9e6b;}
+  *{box-sizing:border-box;} body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,sans-serif;}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 64px;}
+  h1{font-size:23px;margin:0 0 4px;}
+  .sub{color:var(--mut);margin:0 0 22px;font-size:13px;} .sub a{color:var(--acc);text-decoration:none;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+  .thumb{display:block;position:relative;aspect-ratio:1/1;background:#eef1f5;cursor:pointer;}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:.15s;}
+  .thumb:hover .play{opacity:1;}
+  .thumb .play span{background:rgba(0,0,0,.6);color:#fff;border-radius:30px;padding:8px 16px;font-size:13px;}
+  .badge{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 8px;border-radius:20px;}
+  .body{padding:12px 14px 14px;}
+  .label{font-weight:650;font-size:14.5px;margin:0 0 6px;}
+  .k{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.03em;margin:9px 0 2px;}
+  .prompt{font-size:12.5px;background:#eef1f5;border-radius:7px;padding:7px 9px;color:#2a3142;word-break:break-word;}
+  .meas{font-size:12.5px;color:#39414f;}
+  .repo{font-size:12px;color:var(--acc);text-decoration:none;}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;}
+  .dl{color:var(--ok);font-size:13px;font-weight:600;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>결과 갤러리</h1>
+  <p class="sub">텍스처드 건물 결과 모음. 썸네일을 <b>클릭</b>하면 3D 뷰어가 열립니다. · <a href="/">+ 새 메쉬 업로드</a></p>
+  <div id="grid" class="grid"></div>
+</div>
+<script>
+fetch('assets/manifest.json').then(r=>r.json()).then(items=>{
+  const grid=document.getElementById('grid');
+  for(const m of items){
+    const card=document.createElement('div'); card.className='card';
+    const href='view.html?id='+encodeURIComponent(m.id);
+    card.innerHTML=`
+      <a class="thumb" href="${href}">
+        ${m.thumb?`<img src="assets/${m.id}.png" alt="">`:''}
+        <span class="badge">${m.engine}</span>
+        <span class="play"><span>▶ 3D 보기</span></span>
+      </a>
+      <div class="body">
+        <p class="label">${m.label}</p>
+        <div class="k">프롬프트</div><div class="prompt">${m.prompt||'(없음)'}</div>
+        <div class="k">조치</div><div class="meas">${m.measures||''}</div>
+        <div class="row">
+          <a class="repo" href="${m.repo}" target="_blank" rel="noopener">${m.engine} GitHub ↗</a>
+          ${m.glb?`<a class="dl" href="assets/${m.id}.glb" download="${m.id}.glb">⬇ GLB</a>`:''}
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  }
+}).catch(e=>{ document.getElementById('grid').innerHTML='<p>오류: '+e+'</p>'; });
+</script>
+</body>
+</html>

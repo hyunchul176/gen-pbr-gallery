@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D 뷰어</title>
+<script type="module" src="./model-viewer.min.js"></script>
+<style>
+  :root{--bg:#f4f6f9;--card:#fff;--line:#e3e7ee;--fg:#1b2230;--mut:#6b7686;--acc:#c0392b;--ok:#2e9e6b;}
+  *{box-sizing:border-box;} body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,sans-serif;}
+  .wrap{max-width:1000px;margin:0 auto;padding:20px;}
+  a.back{color:var(--acc);text-decoration:none;font-size:14px;}
+  h1{font-size:20px;margin:10px 0 2px;}
+  model-viewer{width:100%;height:62vh;min-height:420px;background:#eef1f5;border:1px solid var(--line);border-radius:14px;margin:12px 0;}
+  .info{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .k{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin:12px 0 3px;}
+  .k:first-child{margin-top:0;}
+  .badge{display:inline-block;background:#eef1f5;border:1px solid var(--line);border-radius:20px;padding:2px 10px;font-size:13px;text-decoration:none;color:var(--fg);}
+  code{display:block;background:#eef1f5;border-radius:8px;padding:10px 12px;font-size:13px;white-space:pre-wrap;word-break:break-word;}
+  .dl{color:var(--ok);font-weight:600;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./index.html">← 갤러리로</a>
+  <h1 id="title">…</h1>
+  <model-viewer id="mv" camera-controls auto-rotate touch-action="pan-y" exposure="1.05"
+                shadow-intensity="0.6" interaction-prompt="auto"></model-viewer>
+  <div class="info">
+    <div class="k">엔진 (모델)</div><div><a id="engine" class="badge" target="_blank" rel="noopener">…</a></div>
+    <div class="k">프롬프트</div><code id="prompt">…</code>
+    <div class="k">조치 / 어떻게 만들었나</div><div id="measures">…</div>
+    <div class="k">다운로드</div><div><a id="dl" class="dl" download>⬇ GLB</a> · <span class="mut">Unity에 드래그-드롭(glTFast)</span></div>
+  </div>
+</div>
+<script>
+const id = new URLSearchParams(location.search).get('id');
+fetch('assets/manifest.json').then(r=>r.json()).then(items=>{
+  const m = items.find(x=>x.id===id);
+  if(!m){ document.getElementById('title').textContent='결과를 찾을 수 없음: '+id; return; }
+  document.getElementById('title').textContent = m.label;
+  const mv=document.getElementById('mv');
+  if(m.glb){ mv.src='assets/'+m.id+'.glb'; } else { mv.outerHTML='<p>이 결과에는 GLB가 없습니다.</p>'; }
+  const e=document.getElementById('engine'); e.textContent=m.engine+' ↗'; e.href=m.repo;
+  document.getElementById('prompt').textContent = m.prompt || '(없음)';
+  document.getElementById('measures').textContent = m.measures || '';
+  const dl=document.getElementById('dl'); dl.href='assets/'+m.id+'.glb'; dl.download=m.id+'.glb';
+});
+</script>
+</body>
+</html>

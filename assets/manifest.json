@@ -1,0 +1,12 @@
+[
+  {
+    "id": "hunyuan_tower",
+    "label": "Tower — Hunyuan3D-2.1 PBR (4K)",
+    "engine": "Hunyuan3D-2.1",
+    "prompt": "brick building facade reference image (6 views, 512px, 4096 texture)",
+    "measures": "5117 verts · 2284 polys · 4K PBR · RTX 4090 24GB full quality",
+    "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
+    "thumb": true,
+    "glb": true
+  }
+]
