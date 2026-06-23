@@ -1,10 +1,30 @@
 [
   {
     "id": "hunyuan_tower",
-    "label": "Tower — Hunyuan3D-2.1 PBR (4K)",
+    "label": "Clock Tower — 고성 석조",
     "engine": "Hunyuan3D-2.1",
-    "prompt": "brick building facade reference image (6 views, 512px, 4096 texture)",
-    "measures": "5117 verts · 2284 polys · 4K PBR · RTX 4090 24GB full quality",
+    "prompt": "castle brick / sandstone (6 views, 512px, 4K PBR)",
+    "measures": "5117 verts · 4K texture · RTX 4090 full quality",
+    "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "hunyuan_building01",
+    "label": "Building 01 — 스터코 회벽",
+    "engine": "Hunyuan3D-2.1",
+    "prompt": "plastered stucco wall (6 views, 512px, 4K PBR)",
+    "measures": "4K texture · RTX 4090 full quality",
+    "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "hunyuan_apartments",
+    "label": "Apartments — 콘크리트 패널",
+    "engine": "Hunyuan3D-2.1",
+    "prompt": "concrete panel wall (6 views, 512px, 4K PBR)",
+    "measures": "4K texture · RTX 4090 full quality",
     "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
     "thumb": true,
     "glb": true
