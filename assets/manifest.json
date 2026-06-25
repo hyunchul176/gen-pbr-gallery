@@ -1,5 +1,55 @@
 [
   {
+    "id": "trellis2_apt_building_133202",
+    "label": "아파트 빌딩 — 실제 아파트 참조 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "ref_image": "trellis2_apt_building_133202_ref.jpg",
+    "measures": "595K verts · 493K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "trellis2_apt_condo_133237",
+    "label": "아파트 콘도 — 암스테르담 컬러풀 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "ref_image": "trellis2_apt_condo_133237_ref.jpg",
+    "measures": "415K verts · 481K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "trellis2_city_apartment_133318",
+    "label": "시티 아파트 — 실제 파사드 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "ref_image": "trellis2_city_apartment_133318_ref.jpg",
+    "measures": "711K verts · 685K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "trellis2_studio_apartments_133355",
+    "label": "스튜디오 아파트 — 실제 아파트 2 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "ref_image": "trellis2_studio_apartments_133355_ref.jpg",
+    "measures": "105K verts · 113K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "trellis2_apartments_133458",
+    "label": "아파트 단지 — 컬러풀 파사드 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "ref_image": "trellis2_apartments_133458_ref.jpg",
+    "measures": "204K verts · 270K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
     "id": "trellis2_apt_abandoned_colorful",
     "label": "아파트 블록 — 컬러풀 파사드 (TRELLIS.2)",
     "engine": "TRELLIS.2-4B",
