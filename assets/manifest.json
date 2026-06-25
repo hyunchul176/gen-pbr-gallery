@@ -1,5 +1,15 @@
 [
   {
+    "id": "hunyuan_apt_kelowna_v2",
+    "label": "고층 아파트 타워 v2 — 실제 아파트 사진 참조",
+    "engine": "Hunyuan3D-2.1",
+    "prompt": "현대식 고급 아파트 파사드 사진 참조 — 유리 발코니, 다크 패널, 화이트 프레임 (405K faces, Objaverse Kelowna Residential Tower)",
+    "measures": "527K verts · 405K faces · 4K PBR",
+    "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
+    "thumb": true,
+    "glb": true
+  },
+  {
     "id": "hunyuan_apt_kelowna",
     "label": "고층 아파트 타워 — 콘크리트",
     "engine": "Hunyuan3D-2.1",
