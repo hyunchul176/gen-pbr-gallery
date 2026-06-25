@@ -1,5 +1,25 @@
 [
   {
+    "id": "trellis2_apt_abandoned_colorful",
+    "label": "아파트 블록 — 컬러풀 파사드 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "prompt": "핑크/노랑/민트 컬러풀 파사드 사진 참조 — 철제 난간 발코니, 다채로운 벽면 (569K verts, 455K faces, Objaverse Abandoned Apartment)",
+    "measures": "569K verts · 455K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
+    "id": "trellis2_apt_abandoned_block",
+    "label": "아파트 블록 — 컬러 패널 (TRELLIS.2)",
+    "engine": "TRELLIS.2-4B",
+    "prompt": "빨강/파랑/초록/노랑 발코니 패널 사진 참조 — 현대식 주거 블록 (569K verts, 455K faces, Objaverse Abandoned Apartment)",
+    "measures": "569K verts · 455K faces · PBR",
+    "repo": "https://github.com/microsoft/TRELLIS.2",
+    "thumb": true,
+    "glb": true
+  },
+  {
     "id": "trellis2_apt_kelowna",
     "label": "고층 아파트 타워 — TRELLIS.2 (MIT)",
     "engine": "TRELLIS.2-4B",
